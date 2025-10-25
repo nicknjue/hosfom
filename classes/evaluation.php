@@ -6,7 +6,7 @@ class Evaluation {
         $this->conn = $db;
     }
 
-    // Insert evaluation
+    // Insert evaluation 
     public function addEvaluation($patient_name, $age, $department, $service_rating, $staff_behavior, $cleanliness, $comments) {
         $sql = "INSERT INTO evaluations (patient_name, age, department, service_rating, staff_behavior, cleanliness, comments)
                 VALUES (:patient_name, :age, :department, :service_rating, :staff_behavior, :cleanliness, :comments)";
@@ -23,7 +23,7 @@ class Evaluation {
     }
 
     // Fetch all evaluations
-    public function getAllEvaluations() {
+    public function  getAllEvaluations() {
         $stmt = $this->conn->query("SELECT * FROM evaluations ORDER BY submitted_at DESC");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
